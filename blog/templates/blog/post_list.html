@@ -10,11 +10,13 @@
         <h1><a href="/">MARUSANブログ</a></h1>
     </header>
 
+    {% for post in posts %}
     <article>
-        <time>published: 10.10.2023, 19:27</time>
-        <h2><a href="">第１回目投稿！もうすぐ臨月歩いた方がいいの？すぐ疲れるーー</a></h2>
-        <p>というぼやきをつぶやくような取り留めのないブログ</p>
+        <time>published: {{ post.publised_date }}</time>
+        <h2><a href="">{{ post.title}}/a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
     </article>
+    {% endfor %}
 
     <article>
         <time>published: 10.10.2023, 19:28</time>
