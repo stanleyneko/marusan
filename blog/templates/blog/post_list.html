@@ -9,13 +9,13 @@
     <div>
         <h1><a href="/">MARUSANブログ</a></h1>
     </div>
-
+    {% for post in posts %}
     <div>
-        <p>published: 12.10.2023</p>
-        <h2><a href="">テスト投稿２回目ただの丸写し！！</a></h2>
-        <p> どうでしょうか、難しいね</p>
+        <p>published: {{ post.published_date }}</p>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
     </div>
-
+    {% endfor %}
     <div>
         <p>公開日: 2023/10/12, 15:43</p>
         <h2><a href="">2番目の投稿</a></h2>
