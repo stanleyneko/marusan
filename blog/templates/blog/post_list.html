@@ -6,24 +6,20 @@
 </head>
 
 <body>
-    <header>
+    <div>
         <h1><a href="/">MARUSANブログ</a></h1>
-    </header>
+    </div>
 
-    {% for post in posts %}
-    <article>
-        <time>published: {{ post.publised_date }}</time>
-        <h2><a href="">{{ post.title}}/a></h2>
-        <p>{{ post.text|linebreaksbr }}</p>
-    </article>
-    {% endfor %}
-
-    <article>
-        <time>published: 10.10.2023, 19:28</time>
+    <div>
+        <p>published: 12.10.2023</p>
         <h2><a href="">テスト投稿２回目ただの丸写し！！</a></h2>
-        <p>Hi there!</p>
-        <p>It works!</p>
-    </article>
-</body>
+        <p> どうでしょうか、難しいね</p>
+    </div>
+
+    <div>
+        <p>公開日: 2023/10/12, 15:43</p>
+        <h2><a href="">2番目の投稿</a></h2>
+        <p>こんにちは！よろしくね！誰が翻訳したんだろ～</p>
+    </div>
 
 </html>
