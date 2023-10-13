@@ -9,22 +9,18 @@
     <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
     <title>MARUSANブログ</title>
 </head>
+{% extends 'blog/base.html' %}
 
-<body>
-    <div class="page-header">
-        <h1><a href="/">MARUSANブログ</a></h1>
+{% block content %}
+{% for post in posts %}
+<div class="post">
+    <div class="date">
+        {{ post.published_date }}
     </div>
-    {% for post in posts %}
-    <div class="post">
-        <p>published: {{ post.published_date }}</p>
-        <h2><a href="">{{ post.title }}</a></h2>
-        <p>{{ post.text|linebreaksbr }}</p>
-    </div>
-    {% endfor %}
-    <div>
-        <p>公開日: 2023/10/12, 15:43</p>
-        <h2><a href="">2番目の投稿</a></h2>
-        <p>こんにちは！よろしくね！誰が翻訳したんだろ～</p>
-    </div>
+    <h2><a href="">{{ post.title }}</a></h2>
+    <p>{{ post.text|linebreaksbr }}</p>
+</div>
+{% endfor %}
+{% endblock %}
 
 </html>
