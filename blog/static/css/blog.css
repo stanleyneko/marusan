@@ -1,6 +1,6 @@
 h1 a,
 h2 a {
-  color: #f78e43;
+  color: hsl(203, 92%, 62%);
   font-family: "Lobster";
 }
 
@@ -9,7 +9,7 @@ body {
 }
 
 .page-header {
-    background-color: #f78e43;
+    background-color: #63bbfe;
     margin-top: 0;
     padding: 20px 20px 20px 40px;
 }
