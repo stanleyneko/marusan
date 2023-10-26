@@ -3,8 +3,10 @@ from django.shortcuts import get_object_or_404
 from django.shortcuts import redirect
 from django.shortcuts import render
 from django.utils import timezone 
-from .models import Post
+from .models import Image, Post
 from .forms import ImageForm, PostForm
+from django.http import HttpResponse
+
 
 
 
@@ -48,7 +50,7 @@ def post_edit(request, pk):
         form = PostForm(instance=post)
     return render(request,'blog/post_edit.html', {'form': form})
 
-def gatcha(request):
+def upload(request):
 
     if request.method == 'POST':
         form = ImageForm(request.POST, request.FILES)
@@ -58,6 +60,9 @@ def gatcha(request):
             return redirect('success')
     else:
         form = ImageForm()
-    return render(request, 'gatch.html', {'image': ImageField}
+    return render(request, 'blog/upload.html', {'image': Image})
+
     
 
+def success(request):
+    return HttpResponse('successfully uploaded')

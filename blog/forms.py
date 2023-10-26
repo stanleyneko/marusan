@@ -13,4 +13,4 @@ class ImageForm(forms.ModelForm):
 
     class Meta:
         model = Image
-        fields = ['title', 'gatcha_Main_img']
+        fields = ('title', 'image',)
