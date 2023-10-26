@@ -1,9 +1,12 @@
+from django.forms import ImageField
 from django.shortcuts import get_object_or_404
 from django.shortcuts import redirect
 from django.shortcuts import render
 from django.utils import timezone 
 from .models import Post
-from .forms import PostForm
+from .forms import ImageForm, PostForm
+
+
 
 
 # Create your views here.
@@ -44,3 +47,17 @@ def post_edit(request, pk):
     else:
         form = PostForm(instance=post)
     return render(request,'blog/post_edit.html', {'form': form})
+
+def gatcha(request):
+
+    if request.method == 'POST':
+        form = ImageForm(request.POST, request.FILES)
+
+        if form.is_valid():
+            form.save()
+            return redirect('success')
+    else:
+        form = ImageForm()
+    return render(request, 'gatch.html', {'image': ImageField}
+    
+
