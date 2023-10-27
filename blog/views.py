@@ -68,4 +68,5 @@ def gatcha(request):
 def show_gatcha(request):
     all_images = Image.objects.all()
     random_image = random.choice(all_images)
-    return render(request,'blog/show_gatcha.html', {'random_image': random_image})
+    random_image_title = random_image.title
+    return render(request,'blog/show_gatcha.html', {'random_image': random_image, 'random_image_title': random_image.title})
