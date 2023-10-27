@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>ボタンを押すと絵文字が出るよ
+</head>>
+
+<body>
+    {% if random_image %}
+    <imag src="{{ random_image.image.url }}" alt="" {{ random_image.title }}>
+        {% else %}
+        <button type="submit">Gatcha</button>>
+        {% endif %}
+        </form>
+
+</body>
+
+</html>
