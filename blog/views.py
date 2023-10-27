@@ -5,8 +5,7 @@ from django.shortcuts import render
 from django.utils import timezone 
 from .models import Image, Post
 from .forms import ImageForm, PostForm
-from django.http import HttpResponse
-
+from blog import gatcha
 
 
 
@@ -64,5 +63,6 @@ def upload(request):
 
     
 
-def success(request):
-    return HttpResponse('successfully uploaded')
+def gatcha(request):
+    random_image = gatcha()
+    return render(request, 'blog/gatcha.html', {'random_image': random_image})
