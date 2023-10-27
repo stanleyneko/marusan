@@ -5,9 +5,8 @@ from django.shortcuts import render
 from django.utils import timezone 
 from .models import Image, Post
 from .forms import ImageForm, PostForm
-from blog import gatcha
-
-
+from django.http import HttpResponse
+import random
 
 
 # Create your views here.
@@ -64,5 +63,9 @@ def upload(request):
     
 
 def gatcha(request):
-    random_image = gatcha()
-    return render(request, 'blog/gatcha.html', {'random_image': random_image})
+    return render(request, 'blog/gatcha.html')
+
+def show_gatcha(request):
+    all_images = Image.objects.all()
+    random_image = random.choice(all_images)
+    return render(request,'blog/show_gatcha.html', {'random_image': random_image})

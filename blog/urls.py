@@ -4,6 +4,7 @@ from django.contrib import admin
 from django.urls import path
 from . import views
 from .views import upload
+from .views import gatcha
 
 
 
@@ -14,6 +15,8 @@ urlpatterns = [
     path('post/new/', views.post_new, name='post_new'),
     path('post/<int:pk>/edit/', views.post_edit, name='post_edit'),
     path('upload/', views.upload, name='upload' ),
+    path('gatcha/', views.gatcha, name='gatcha'),
+    path('show_gatcha/',views.show_gatcha, name= 'show_gatcha'),
 ]
 
 if settings.DEBUG: 
