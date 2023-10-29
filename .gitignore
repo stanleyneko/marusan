@@ -11,6 +11,9 @@ venv/
 # Database
 db.sqlite3
 
+# Uploaded image folder 
+media/
+
 # Static folder at project root
 /static/
 
