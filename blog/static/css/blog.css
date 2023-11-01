@@ -56,3 +56,16 @@ h1, h2, h3, h4 {
     color: #000000
 }
 
+.button{
+    width: 148px;
+    height: 48px;
+    border-radius: 4px;
+    background: #333333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
