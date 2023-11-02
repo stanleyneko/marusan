@@ -3,11 +3,11 @@
 <html>
 
 <head>
-    {{ random_image.title }}
-     <title>HOME<a href="/base.html"></a></title>
+    <title>{{ random_image.title }} - HOME</title>
 </head>
 
 <body>
+    <a href="/base.html">HOME</a>
     <img src="{{ random_image.image.url }}" alt="oops">
     <button onclick="location.reload();">Gatcha</button>
 </body>
