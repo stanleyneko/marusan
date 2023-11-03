@@ -1,36 +1,35 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
-
-<head>
-    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  <head>
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
+    <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css" />
     <title>MARUSANブログ</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <header class="page-header">
-        <div class="container">
-{% if user.is_authenticated %}
-            <a href="{% url 'post_new' %}" class="top-menu">
-                {% include './icons/file-earmark-plus.svg' %}
-            <a href="/show_gatcha">Gatcha</a><img src="/media/images/cat_icon.PNG" alt="猫">   
-            </a>
-{% endif %}
+      <div class="container">
+        {% if user.is_authenticated %}
+          <a href="{% url 'post_new' %}" class="top-menu">
+            {% include './icons/file-earmark-plus.svg' %}
+            <a href="/show_gatcha">Gatcha</a><img src="/media/images/cat_icon.PNG" alt="猫" />
+          </a>
+        {% endif %}
 
-            <h1><a href="/">MARUSANブログ</a></h1>
-        </div>
+        <h1><a href="/">MARUSANブログ</a></h1>
+      </div>
     </header>
     <main class="content container">
-        <div class="row">
-            <div class="col">
-                {% block content %}
-                {% endblock %}
-            </div>
-        </div>
-    </main>
-</body>
+      <div class="row">
+        <div class="col">
+          {% block content %}
 
+          {% endblock %}
+        </div>
+      </div>
+    </main>
+  </body>
 </html>

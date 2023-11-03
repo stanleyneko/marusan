@@ -1,24 +1,13 @@
 <!DOCTYPE html>
 
 <html>
+  <head></head>
 
-<head>
-
-</head>>
-
-<body>
-    <form method='post' enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Upload</button>>
+  <body>
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Upload</button>
     </form>
-
-</body>
-
-
-
-
-
-
-
+  </body>
 </html>
